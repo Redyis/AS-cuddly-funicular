@@ -19,9 +19,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AScuddlyfunicularTheme {
-                Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                Scaffold(
+                    topBar = {Toolbar()},
+                    modifier = Modifier.fillMaxSize()
+                ) { innerPadding ->
+                    AppList(
+                        apps = sampleApps,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -30,18 +33,19 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun MainScreenPreview() {
     AScuddlyfunicularTheme {
-        Greeting("Android")
+        Scaffold(
+            topBar = { Toolbar() },
+            modifier = Modifier.fillMaxSize()
+        ) { innerPadding ->
+            AppList(
+                apps = sampleApps,
+                modifier = Modifier.padding(innerPadding)
+            )
+        }
     }
 }
