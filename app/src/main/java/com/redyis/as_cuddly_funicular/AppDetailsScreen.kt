@@ -28,6 +28,15 @@ fun AppDetailsScreen(
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(16.dp)
         )
+        AppDetailsHeader()
+        InstallButton(
+            onClick = {}
+        )
+        AppDescription(
+            description = "Описание",
+            collapsed = false,
+            onReadMoreClick = {}
+        )
         Text(
             text = "Подробное описание выбранного приложения из практической части.",
             modifier = Modifier.padding(horizontal = 16.dp)
