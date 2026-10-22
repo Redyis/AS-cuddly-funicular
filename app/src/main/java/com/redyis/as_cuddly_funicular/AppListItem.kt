@@ -49,10 +49,9 @@ fun AppListItem(
     }
 }
 
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 @Composable
 private fun AppListItemPreview() {
-    // 👈 Обязательно обворачиваем в тему проекта!
     AScuddlyfunicularTheme {
         AppListItem(
             app = AppItem(

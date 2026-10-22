@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import com.redyis.as_cuddly_funicular.ui.theme.AScuddlyfunicularTheme
 
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 @Composable
 fun Toolbar(
     modifier: Modifier = Modifier
