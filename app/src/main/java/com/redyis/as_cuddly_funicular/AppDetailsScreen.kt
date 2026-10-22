@@ -3,6 +3,7 @@ package com.redyis.as_cuddly_funicular
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -29,17 +30,19 @@ fun AppDetailsScreen(
             modifier = Modifier.padding(16.dp)
         )
         AppDetailsHeader()
+
         InstallButton(
+            modifier = modifier.fillMaxWidth().padding(horizontal = 16.dp),
             onClick = {}
         )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         AppDescription(
-            description = "Описание",
+            description = "Легендарный рейд героев...",
             collapsed = false,
+            modifier = modifier.padding(horizontal = 16.dp),
             onReadMoreClick = {}
-        )
-        Text(
-            text = "Подробное описание выбранного приложения из практической части.",
-            modifier = Modifier.padding(horizontal = 16.dp)
         )
 
         Spacer(modifier = Modifier.height(32.dp))
