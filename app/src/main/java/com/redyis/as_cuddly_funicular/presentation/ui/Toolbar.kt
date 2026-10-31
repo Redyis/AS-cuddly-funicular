@@ -1,4 +1,4 @@
-package com.redyis.as_cuddly_funicular
+package com.redyis.as_cuddly_funicular.presentation.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.redyis.as_cuddly_funicular.R
 
 //@Preview(showBackground = true)
 @Composable

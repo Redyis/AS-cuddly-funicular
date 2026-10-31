@@ -1,9 +1,9 @@
-package com.redyis.as_cuddly_funicular
+package com.redyis.as_cuddly_funicular.domain.model
 
 import androidx.annotation.DrawableRes
 
 data class AppItem(
-    @DrawableRes val iconRes: Int,
+    @param:DrawableRes val iconRes: Int,
     val name: String,
     val description: String,
     val category: String

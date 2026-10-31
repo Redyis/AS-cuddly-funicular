@@ -1,9 +1,8 @@
-package com.redyis.as_cuddly_funicular
+package com.redyis.as_cuddly_funicular.presentation.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
@@ -13,9 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.redyis.as_cuddly_funicular.ui.theme.AScuddlyfunicularTheme
+import com.redyis.as_cuddly_funicular.domain.model.AppItem
 
 @Composable
 fun ShowcaseBlock(

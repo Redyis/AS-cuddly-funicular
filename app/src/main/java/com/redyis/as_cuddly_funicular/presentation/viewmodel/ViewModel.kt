@@ -1,6 +1,8 @@
-package com.redyis.as_cuddly_funicular
+package com.redyis.as_cuddly_funicular.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.redyis.as_cuddly_funicular.domain.model.AppItem
+import com.redyis.as_cuddly_funicular.data.datasource.sampleApps
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

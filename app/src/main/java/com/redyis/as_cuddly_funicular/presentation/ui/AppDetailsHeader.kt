@@ -1,4 +1,4 @@
-package com.redyis.as_cuddly_funicular
+package com.redyis.as_cuddly_funicular.presentation.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -13,6 +13,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.redyis.as_cuddly_funicular.R
 
 @Composable
 fun AppDetailsHeader(modifier: Modifier = Modifier) {

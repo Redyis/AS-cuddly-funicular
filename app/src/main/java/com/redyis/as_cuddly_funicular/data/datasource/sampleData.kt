@@ -1,4 +1,7 @@
-package com.redyis.as_cuddly_funicular
+package com.redyis.as_cuddly_funicular.data.datasource
+
+import com.redyis.as_cuddly_funicular.R
+import com.redyis.as_cuddly_funicular.domain.model.AppItem
 
 val sampleApps = listOf(
     AppItem(R.drawable.vk_icon, "VK", "Социальная сеть", "Соцсети"),

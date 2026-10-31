@@ -1,4 +1,4 @@
-package com.redyis.as_cuddly_funicular
+package com.redyis.as_cuddly_funicular.presentation.ui
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.shape.RoundedCornerShape

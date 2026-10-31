@@ -1,4 +1,4 @@
-package com.redyis.as_cuddly_funicular
+package com.redyis.as_cuddly_funicular.presentation.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -16,7 +16,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.tooling.preview.Preview
+import com.redyis.as_cuddly_funicular.domain.model.AppItem
+import com.redyis.as_cuddly_funicular.R
 import com.redyis.as_cuddly_funicular.ui.theme.AScuddlyfunicularTheme
 
 @Composable
