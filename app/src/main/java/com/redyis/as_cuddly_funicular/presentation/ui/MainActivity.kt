@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -20,7 +21,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.redyis.as_cuddly_funicular.presentation.viewmodel.AppViewModel
+import com.redyis.as_cuddly_funicular.presentation.viewmodel.MainViewModel
 import com.redyis.as_cuddly_funicular.ui.theme.AScuddlyfunicularTheme
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.getValue
@@ -33,7 +34,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             AScuddlyfunicularTheme {
 
-                val viewModel: AppViewModel = viewModel()
+                val viewModel: MainViewModel by viewModels()
                 val state by viewModel.state.collectAsStateWithLifecycle()
 
 
