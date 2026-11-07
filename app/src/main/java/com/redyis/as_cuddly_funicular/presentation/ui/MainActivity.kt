@@ -17,7 +17,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -26,15 +25,18 @@ import com.redyis.as_cuddly_funicular.ui.theme.AScuddlyfunicularTheme
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.getValue
 import androidx.compose.foundation.lazy.items
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             AScuddlyfunicularTheme {
 
-                val viewModel: MainViewModel by viewModels()
+
                 val state by viewModel.state.collectAsStateWithLifecycle()
 
 
@@ -45,11 +47,8 @@ class MainActivity : ComponentActivity() {
 
                 LaunchedEffect(state.snackbarMessage) {
                     state.snackbarMessage?.let { message ->
+                        snackbarHostState.showSnackbar(message)
                         viewModel.clearSnackbarMessage()
-
-                        scope.launch {
-                            snackbarHostState.showSnackbar(message)
-                        }
                     }
                 }
 
@@ -84,6 +83,7 @@ class MainActivity : ComponentActivity() {
 
                         composable("details") {
                             AppDetailsScreen(
+                                apps = state.apps,
                                 onShowcaseAppClick = {
                                     navController.navigate("list")
                                 }

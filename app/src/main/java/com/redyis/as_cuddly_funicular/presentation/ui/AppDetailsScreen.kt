@@ -13,12 +13,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.redyis.as_cuddly_funicular.data.datasource.sampleApps
+import com.redyis.as_cuddly_funicular.domain.model.AppItem
 
 @Composable
 fun AppDetailsScreen(
     onShowcaseAppClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    apps: List<AppItem> = emptyList()
 ) {
     Column(
         modifier = modifier
@@ -49,8 +50,8 @@ fun AppDetailsScreen(
         Spacer(modifier = Modifier.height(32.dp))
 
         ShowcaseBlock(
-            apps = sampleApps,
-            onAppClick = {onShowcaseAppClick()}
+            apps = apps,
+            onAppClick = { onShowcaseAppClick() }
         )
     }
 }

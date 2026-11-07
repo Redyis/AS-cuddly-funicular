@@ -2,9 +2,9 @@ package com.redyis.as_cuddly_funicular.data.datasource
 
 import com.redyis.as_cuddly_funicular.R
 import com.redyis.as_cuddly_funicular.data.dto.AppDto
-import com.redyis.as_cuddly_funicular.domain.model.AppItem
+import javax.inject.Inject
 
-class MockAppDataSource {
+class MockAppDataSource @Inject constructor() {
     fun getApps(): List<AppDto> = listOf(
         AppDto(R.drawable.vk_icon, "VK", "Социальная сеть", "Соцсети"),
         AppDto(R.drawable.vk_music, "VK Музыка", "Музыкальный плеер", "Музыка"),

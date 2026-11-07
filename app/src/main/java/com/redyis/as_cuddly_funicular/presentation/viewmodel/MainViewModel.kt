@@ -8,19 +8,20 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-// 1. Избавились от зависимости от sampleApps — дефолтное значение emptyList()
 data class MainUiState(
     val apps: List<AppItem> = emptyList(),
     val snackbarMessage: String? = null
 )
 
-// 2. Корректный синтаксис первичного конструктора
-class MainViewModel(
-    private val repository: AppRepository = AppRepositoryImpl()
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val repository: AppRepository
 ) : ViewModel() {
 
-    // 3. Инициализируем состояние данными из репозитория
+
     private val _state = MutableStateFlow(
         MainUiState(apps = repository.getApps())
     )
