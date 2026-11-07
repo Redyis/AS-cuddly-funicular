@@ -20,6 +20,8 @@ import com.redyis.as_cuddly_funicular.domain.model.AppItem
 import com.redyis.as_cuddly_funicular.R
 import com.redyis.as_cuddly_funicular.ui.theme.AScuddlyfunicularTheme
 
+import androidx.compose.ui.tooling.preview.Preview
+
 @Composable
 
 fun AppListItem(
@@ -50,7 +52,7 @@ fun AppListItem(
     }
 }
 
-//@Preview(showBackground = true)
+@Preview(showBackground = true)
 @Composable
 private fun AppListItemPreview() {
     AScuddlyfunicularTheme {

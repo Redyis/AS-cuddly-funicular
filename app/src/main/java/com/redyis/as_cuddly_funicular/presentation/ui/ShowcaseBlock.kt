@@ -50,14 +50,3 @@ fun ShowcaseBlock(
         }
     }
 }
-
-//@Preview(showBackground = true)
-//@Composable
-//private fun ShowcaseBlockPreview() {
-//    AScuddlyfunicularTheme {
-//        ShowcaseBlock(
-//            apps = sampleApps,
-//            onAppClick = {}
-//        )
-//    }
-//}

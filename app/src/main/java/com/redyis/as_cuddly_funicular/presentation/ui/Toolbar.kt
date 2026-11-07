@@ -14,9 +14,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.tooling.preview.Preview
 import com.redyis.as_cuddly_funicular.R
 
-//@Preview(showBackground = true)
+@Preview(showBackground = true)
 @Composable
 fun Toolbar(
     modifier: Modifier = Modifier,
