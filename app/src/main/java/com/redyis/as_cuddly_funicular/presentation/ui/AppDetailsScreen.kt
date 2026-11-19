@@ -11,16 +11,24 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.redyis.as_cuddly_funicular.domain.model.AppItem
+import com.redyis.as_cuddly_funicular.presentation.viewmodel.AppDetailsState
+import com.redyis.as_cuddly_funicular.presentation.viewmodel.AppDetailsViewModel
 
 @Composable
 fun AppDetailsScreen(
     onShowcaseAppClick: () -> Unit,
     modifier: Modifier = Modifier,
-    apps: List<AppItem> = emptyList()
+    apps: List<AppItem> = emptyList(),
+    viewModel: AppDetailsViewModel = hiltViewModel()
 ) {
+    val state by viewModel.state.collectAsState()
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -31,19 +39,25 @@ fun AppDetailsScreen(
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(16.dp)
         )
+
         AppDetailsHeader()
 
-        InstallButton(
-            modifier = modifier.fillMaxWidth().padding(horizontal = 16.dp),
-            onClick = {}
-        )
+
+        if (state is AppDetailsState.Content) {
+            val contentState = state as AppDetailsState.Content
+            InstallButton(
+                installState = contentState.installState,
+                onClick = { viewModel.onInstallClick() },
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)
+            )
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
 
         AppDescription(
             description = "Легендарный рейд героев...",
             collapsed = false,
-            modifier = modifier.padding(horizontal = 16.dp),
+            modifier = Modifier.padding(horizontal = 16.dp),
             onReadMoreClick = {}
         )
 

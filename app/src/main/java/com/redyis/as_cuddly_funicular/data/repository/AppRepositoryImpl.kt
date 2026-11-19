@@ -4,6 +4,9 @@ import com.redyis.as_cuddly_funicular.data.api.CatalogApi
 import com.redyis.as_cuddly_funicular.data.mapper.AppMapper
 import com.redyis.as_cuddly_funicular.domain.model.AppItem
 import com.redyis.as_cuddly_funicular.domain.repository.AppRepository
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
 import javax.inject.Inject
 
 class AppRepositoryImpl @Inject constructor(
@@ -12,7 +15,22 @@ class AppRepositoryImpl @Inject constructor(
 ) : AppRepository {
 
     override suspend fun getApps(): List<AppItem> {
-        val dtoList = api.getCatalog()
-        return mapper.toDomainList(dtoList)
+        return mapper.toDomainList(api.getCatalog())
+    }
+
+
+    override suspend fun loadRatingsSequentially(ids: List<String>): Map<String, Float> {
+        val result = mutableMapOf<String, Float>()
+        for (id in ids) {
+            result[id] = api.getRating(id)
+        }
+        return result
+    }
+
+
+    override suspend fun loadRatingsInParallel(ids: List<String>): Map<String, Float> = coroutineScope {
+        ids.map { id ->
+            async { id to api.getRating(id) }
+        }.awaitAll().toMap()
     }
 }

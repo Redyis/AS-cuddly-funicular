@@ -19,9 +19,9 @@ import androidx.compose.ui.unit.dp
 import com.redyis.as_cuddly_funicular.domain.model.AppItem
 import com.redyis.as_cuddly_funicular.R
 import com.redyis.as_cuddly_funicular.ui.theme.AScuddlyfunicularTheme
-
+import com.redyis.as_cuddly_funicular.ui.theme.AScuddlyfunicularTheme
 import androidx.compose.ui.tooling.preview.Preview
-
+import androidx.compose.material3.MaterialTheme
 @Composable
 
 fun AppListItem(
@@ -48,6 +48,12 @@ fun AppListItem(
             Text(text = app.name, fontWeight = FontWeight.Bold)
             Text(text = app.description, color = Color.Gray)
             Text(text = app.category, color = Color.Blue)
+        }
+    }
+
+    if (app.rating != null) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(text = "⭐ ${app.rating}", style = MaterialTheme.typography.bodySmall)
         }
     }
 }
