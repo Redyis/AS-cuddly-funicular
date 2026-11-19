@@ -1,0 +1,2 @@
+2026-11-19 16:31:02.743  6363-6363  RatingsBenchmark        com.redyis.as_cuddly_funicular       D  Последовательно (41 шт.): 61663 мс
+2026-11-19 16:31:04.271  6363-6363  RatingsBenchmark        com.redyis.as_cuddly_funicular       D  Параллельно (41 шт.): 1527 мс
